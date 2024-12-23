@@ -1,0 +1,129 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #c2185b;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header .logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+main .links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; /* Take full width of parent */
+    max-width: 400px; /* Matches the register form width */
+    padding: 20px; /* Inner spacing */
+    border: 3px solid #3f51b5; /* Outer border for the container */
+    border-radius: 8px;
+    background-color: #fff; /* Optional for better contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+main .button {
+    width: 100%;
+    padding: 15px;
+    background-color: #3f51b5;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: 3px solid #3f51b5; /* Outer border for buttons */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+main .button:hover {
+    background-color: #303f9f;
+    border-color: #ff4081; /* Change border color on hover */
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-icon {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #ff4081;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main .links {
+        max-width: 90%; /* Adjust for smaller screens */
+    }
+
+    main .button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    main .button {
+        font-size: 14px;
+    }
+}
