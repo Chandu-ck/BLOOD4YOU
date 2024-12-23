@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Blood Donors</title>
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <header>
+        <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
+        <h1>Search for BLOOD 4 YOU Donors</h1>
+    </header>
+
+    <main>
+        <form action="search" method="GET">
+            <input type="text" name="location" placeholder="Location" required> <br> <br>
+            <input type="text" name="bloodgroup" placeholder="Blood Group" required> <br> <br>
+            <button type="submit" class="button">Search</button> <br> <br>
+        </form>
+
+        <h2>Available Donors:</h2>
+        <ul>
+            <!-- List of donors will appear here -->
+            <c:forEach var="donor" items="availableBlood">
+                <li>${donor}</li>
+            </c:forEach>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 BLOOD 4 YOU. All rights reserved By Chandu.</p>
+            <div class="social-links">
+                <a href="mailto:your-email@gmail.com" class="social-icon">Gmail</a>
+                <a href="https://chat.whatsapp.com/EKckhyum8UF3NaEF3d6XWM" class="social-icon">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
