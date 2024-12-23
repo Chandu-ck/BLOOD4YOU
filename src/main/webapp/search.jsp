@@ -51,10 +51,10 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Blood Donation App. All rights reserved.</p>
+            <p>&copy; 2024 BLOOD 4 YOU. All rights reserved By Chandu.</p>
             <div class="social-links">
                 <a href="mailto:your-email@gmail.com" class="social-icon">Gmail</a>
-                <a href="https://wa.me/your-whatsapp-number" class="social-icon">WhatsApp</a>
+                <a href="https://chat.whatsapp.com/EKckhyum8UF3NaEF3d6XWM" class="social-icon">WhatsApp</a>
             </div>
         </div>
     </footer>
