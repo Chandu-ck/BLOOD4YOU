@@ -38,17 +38,17 @@ header h1 {
     text-align: center; /* Ensure the text is centered */
 }
 
-/* Form */
-main form {
-    max-width: 400px;
-    margin: 50px auto;
+/* Search Form */
+.search-form {
+    max-width: 500px;
+    margin: 30px auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-main input[type="text"] {
+.search-form input[type="text"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -56,7 +56,7 @@ main input[type="text"] {
     border-radius: 4px;
 }
 
-main button {
+.search-form button {
     width: 100%;
     padding: 10px;
     background-color: #3f51b5;
@@ -67,21 +67,26 @@ main button {
     cursor: pointer;
 }
 
-main button:hover {
+.search-form button:hover {
     background-color: #303f9f;
 }
 
-/* Available Donors List */
-main ul {
+/* Donor List */
+.donor-list {
     list-style-type: none;
-    padding: 0;
+    padding: 30px;
+    margin-bottom: 80px; /* Add space between donor list and footer */
 }
-
-main ul li {
+.donor-item {
     background-color: #f4f4f4;
     margin: 10px 0;
-    padding: 10px;
+    padding: 15px;
     border-radius: 4px;
+    text-align: left;
+}
+
+.donor-item b {
+    color: #c2185b;
 }
 
 /* Footer */

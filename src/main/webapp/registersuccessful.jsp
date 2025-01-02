@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login2.css">
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="registersuccessful2.css">
 </head>
 <body>
-    <header>
-       <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
-        <h1>Login to the BLOOD 4 YOU</h1>
+	<header>
+        <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
+        <h1>Register for BLOOD 4 YOU</h1>
     </header>
-
+    
     <main>
-        <form action="login" method="POST">
-            <input type="text" name="username" placeholder="Email or Mobile Number" required> <br> <br>
-            <input type="password" name="password" placeholder="Password" required> <br> <br>
-            <button type="submit" class="button">Login</button> <br> <br>
-        </form>
+    	<h1>Thank You for Registering!</h1> <br>
+        <p>Your registration was successful. Welcome to BLOOD 4 YOU!</p> <br>
+        <!-- Display the user's name dynamically -->
+        <h2>Welcome, <%= request.getAttribute("userName") %>!</h2>
+        <a href="login.html" class="button">Go to Login</a>
     </main>
-
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 BLOOD 4 YOU. All rights reserved By<a href="https://busagani.netlify.app/" class="social-icon" aria-label="Profile">Chandu.</a> </p>

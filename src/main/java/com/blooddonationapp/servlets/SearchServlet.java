@@ -21,12 +21,14 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/search")
 public class SearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Retrieve the location and blood group parameters from the request
         String location = request.getParameter("location");
         String bloodGroup = request.getParameter("bloodgroup");
 
         List<Donor> availableBlood = new ArrayList<>();
 
         try (Connection conn = DatabaseConnection.getConnection()) {
+            // Query to get donors matching the blood group and location
             String sql = "SELECT Name, MobileNumber, Email, Location, BloodGroup FROM Users WHERE BloodGroup = ? AND Location = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, bloodGroup);
@@ -34,12 +36,14 @@ public class SearchServlet extends HttpServlet {
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
+                // Extract donor details from the result set
                 String name = rs.getString("Name");
                 String mobileNumber = rs.getString("MobileNumber");
                 String email = rs.getString("Email");
                 String donorLocation = rs.getString("Location");
                 String donorBloodGroup = rs.getString("BloodGroup");
 
+                // Add the donor details to the list
                 availableBlood.add(new Donor(name, mobileNumber, email, donorLocation, donorBloodGroup));
             }
 
@@ -52,8 +56,8 @@ public class SearchServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        // Forward to search.jsp to display results
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/search.jsp");
+        // Forward to donorsearch.jsp to display the results
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/donorsearch.jsp");
         dispatcher.forward(request, response);
     }
 }

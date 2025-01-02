@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login2.css">
+    <title>Registration Failed</title>
+    <link rel="stylesheet" href="registerfailed.css"> <!-- Link to the failed registration styling -->
 </head>
 <body>
     <header>
-       <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
-        <h1>Login to the BLOOD 4 YOU</h1>
+        <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
+        <h1>Register for BLOOD 4 YOU</h1>
     </header>
-
+    
     <main>
-        <form action="login" method="POST">
-            <input type="text" name="username" placeholder="Email or Mobile Number" required> <br> <br>
-            <input type="password" name="password" placeholder="Password" required> <br> <br>
-            <button type="submit" class="button">Login</button> <br> <br>
-        </form>
+        <h1>Registration Failed</h1>
+        <p>Sorry, there was an issue with your registration. Please try again later.</p> 
+        <!-- Display the error message dynamically -->
+        <h2>Error: <%= request.getAttribute("errorMessage") %></h2>
+        <a href="register.html" class="button">Try Again</a>
     </main>
-
+    
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 BLOOD 4 YOU. All rights reserved By<a href="https://busagani.netlify.app/" class="social-icon" aria-label="Profile">Chandu.</a> </p>
