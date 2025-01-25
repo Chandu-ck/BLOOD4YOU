@@ -1,0 +1,136 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body stretches to fill the viewport */
+}
+
+/* Header */
+header {
+    background-color: #c2185b;
+    color: white;
+    padding: 20px 0;
+    display: flex; /* Use flexbox to position elements horizontally */
+    align-items: center; /* Vertically center the logo and text */
+    position: relative; /* Set to relative for positioning the h1 */
+}
+
+header .logo {
+    width: 60px; /* Adjust logo size */
+    margin-right: 20px; /* Add space between the logo and the header text */
+    margin-left: 20px; /* Add space between the logo and the header text */
+}
+
+header h1 {
+    font-size: 28px; /* Adjust font size as needed */
+    margin: 0;
+    position: absolute; /* Position the h1 absolutely */
+    left: 50%; /* Position it horizontally in the middle */
+    transform: translateX(-50%); /* Offset the element by 50% of its width to truly center it */
+    text-align: center; /* Ensure the text is centered */
+}
+
+/* Form */
+main {
+    flex: 1; /* Allows main to expand and push footer down */
+    padding: 20px;
+    text-align: center;
+}
+
+main form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #303f9f;
+}
+
+main h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #c2185b;
+}
+
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+}
+
+main ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-icon {
+    color: white;
+    text-decoration: none;
+    margin-left: 3px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #ff4081;
+}

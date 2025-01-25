@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Blood Donors</title>
+    <link rel="stylesheet" href="search4.css">
+    <script>
+        // Function to filter blood group options
+        function filterBloodGroup() {
+            const input = document.getElementById("bloodGroupField");
+            const filter = input.value.toUpperCase();
+            const datalist = document.getElementById("bloodGroupDropdown");
+            const options = datalist.getElementsByTagName("option");
+
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                const text = option.value;
+                if (text.toUpperCase().includes(filter)) {
+                    option.style.display = "";
+                } else {
+                    option.style.display = "none";
+                }
+            }
+        }
+
+        // Function to filter location options
+        function filterLocation() {
+            const input = document.getElementById("searchField");
+            const filter = input.value.toUpperCase();
+            const datalist = document.getElementById("mandalDropdown");
+            const options = datalist.getElementsByTagName("option");
+
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                const text = option.value;
+                if (text.toUpperCase().includes(filter)) {
+                    option.style.display = "";
+                } else {
+                    option.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
+        <h1>Search for BLOOD 4 YOU Donors</h1>
+    </header>
+
+    <main>
+        <form action="search" method="GET">
+            <!-- Blood Group Input with Filtered Dropdown -->
+            <input 
+                type="text" 
+                id="bloodGroupField" 
+                name="bloodgroup" 
+                onkeyup="filterBloodGroup()" 
+                placeholder="Search Blood Group..." 
+                list="bloodGroupDropdown" 
+                required 
+            > <br><br>
+
+            <datalist id="bloodGroupDropdown">
+                <option value="A+">
+                <option value="A-">
+                <option value="B+">
+                <option value="B-">
+                <option value="O+">
+                <option value="O-">
+                <option value="AB+">
+                <option value="AB-">
+            </datalist>
+
+            <!-- Location Input with Filtered Dropdown -->
+            <input 
+                type="text" 
+                id="searchField" 
+                name="location" 
+                onkeyup="filterLocation()" 
+                placeholder="Search for a location..." 
+                list="mandalDropdown" 
+                required 
+            > <br><br>
+
+            <datalist id="mandalDropdown">
+                <option value="Atlur">
+                <option value="B Kodur">
+                <option value="Badvel">
+                <option value="Brahmamgarimattam">
+                <option value="Chakrayapet">
+                <option value="Chapad">
+                <option value="Chennur">
+                <option value="Chinthakommadinne">
+                <option value="Chitvel">
+                <option value="Duvvur">
+                <option value="Galiveedu">
+                <option value="Gopavaram">
+                <option value="Jammalamadugu">
+                <option value="Kadapa">
+                <option value="Kalasapadu">
+                <option value="Kamalapuram">
+                <option value="Khajipet">
+                <option value="Kodur">
+                <option value="Kondapuram">
+                <option value="Lakkireddipalle">
+                <option value="Lingala">
+                <option value="Muddanoor">
+                <option value="Mylavaram">
+                <option value="Nandalur">
+                <option value="Obulavaripalle">
+                <option value="Pendlimarri">
+                <option value="Penagaluru">
+                <option value="Peddamudium">
+                <option value="Porumamilla">
+                <option value="Proddutur">
+                <option value="Pulivendula">
+                <option value="Pullampeta">
+                <option value="Rajampet">
+                <option value="Rajupalem">
+                <option value="Ramapuram">
+                <option value="Rayachoti">
+                <option value="Sambepalle">
+                <option value="Sidout">
+                <option value="Simhadripuram">
+                <option value="Mydukur">
+                <option value="Sundupalle">
+                <option value="Thandur">
+                <option value="Vallur">
+                <option value="Veeraballe">
+                <option value="Veerapunayunipalle">
+                <option value="Vempalle">
+                <option value="Vemula">
+                <option value="Vontimitta">
+                <option value="Yerraguntla">
+            </datalist>
+
+            <button type="submit" class="button">Search</button> <br><br>
+        </form>
+
+        <h2>Available Donors:</h2>
+        <ul>
+            <!-- List of donors will appear here -->
+            <c:forEach var="donor" items="availableBlood">
+                <li>${donor}</li>
+            </c:forEach>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 BLOOD 4 YOU. Designed By<a href="https://busagani.netlify.app/"class="social-icon" aria-label="Profile">Chandu.</a> </p>
+            <div class="social-links">
+                <a href="mailto:your-email@gmail.com" class="social-icon" aria-label="Send an email">Gmail</a>
+                <a href="https://chat.whatsapp.com/EKckhyum8UF3NaEF3d6XWM" class="social-icon" aria-label="Join WhatsApp Group">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register with Mandal and Blood Group Selection</title>
+    <link rel="stylesheet" href="register2.css">
+    <script>
+        function filterDropdown() {
+            const input = document.getElementById("searchField").value.toLowerCase();
+            const dropdown = document.getElementById("mandalDropdown");
+            const options = dropdown.options;
+
+            for (let i = 0; i < options.length; i++) {
+                const text = options[i].text.toLowerCase();
+                options[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+
+        function clearFieldBox() {
+            document.getElementById("searchField").value = '';
+        }
+
+        // Blood group search filter function
+        function filterBloodGroup() {
+            const input = document.getElementById("bloodGroupField").value.toLowerCase();
+            const dropdown = document.getElementById("bloodGroupDropdown");
+            const options = dropdown.options;
+
+            for (let i = 0; i < options.length; i++) {
+                const text = options[i].text.toLowerCase();
+                options[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+
+        function clearBloodGroupField() {
+            document.getElementById("bloodGroupField").value = '';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="blood 2.jpg" alt="BLOOD 4 YOU Logo" class="logo">
+        <h1>Register for BLOOD 4 YOU</h1>
+    </header>
+
+    <main>
+        <form action="register" method="POST">
+            <input type="text" name="name" placeholder="Name" required> 
+            <input type="text" name="mobile" placeholder="Mobile Number" required> 
+            <input type="email" name="email" placeholder="Email" required> 
+            <input type="password" name="password" placeholder="Password" required> 
+
+            <!-- Blood Group Searchable Input -->
+            <!--<label for="bloodgroup">Select Blood Group:</label><br>-->
+            <input 
+                type="text" 
+                id="bloodGroupField" 
+                name="bloodgroup" 
+                onkeyup="filterBloodGroup()" 
+                placeholder="Search Blood Group..." 
+                list="bloodGroupDropdown" 
+                required 
+            > 
+            <datalist id="bloodGroupDropdown">
+                <option value="A+">
+                <option value="A-">
+                <option value="B+">
+                <option value="B-">
+                <option value="O+">
+                <option value="O-">
+                <option value="AB+">
+                <option value="AB-">
+            </datalist>
+
+            <!-- Mandal Searchable Input -->
+            <!-- <label for="location"></label><br>  -->
+            
+            <input 
+                type="text" 
+                id="searchField" 
+                name="location" 
+                onkeyup="filterDropdown()" 
+                placeholder="Search for a location..." 
+                list="mandalDropdown" 
+                required 
+            > 
+            <datalist id="mandalDropdown">
+	                <option value="Atlur">
+                <option value="B Kodur">
+                <option value="Badvel">
+                <option value="Brahmamgarimattam">
+                <option value="Chakrayapet">
+                <option value="Chapad">
+                <option value="Chennur">
+                <option value="Chinthakommadinne">
+                <option value="Chitvel">
+                <option value="Duvvur">
+                <option value="Galiveedu">
+                <option value="Gopavaram">
+                <option value="Jammalamadugu">
+                <option value="Kadapa">
+                <option value="Kalasapadu">
+                <option value="Kamalapuram">
+                <option value="Khajipet">
+                <option value="Kodur">
+                <option value="Kondapuram">
+                <option value="Lakkireddipalle">
+                <option value="Lingala">
+                <option value="Muddanoor">
+                <option value="Mylavaram">
+                <option value="Nandalur">
+                <option value="Obulavaripalle">
+                <option value="Pendlimarri">
+                <option value="Penagaluru">
+                <option value="Peddamudium">
+                <option value="Porumamilla">
+                <option value="Proddutur">
+                <option value="Pulivendula">
+                <option value="Pullampeta">
+                <option value="Rajampet">
+                <option value="Rajupalem">
+                <option value="Ramapuram">
+                <option value="Rayachoti">
+                <option value="Sambepalle">
+                <option value="Sidout">
+                <option value="Simhadripuram">
+                <option value="Mydukur">
+                <option value="Sundupalle">
+                <option value="Thandur">
+                <option value="Vallur">
+                <option value="Veeraballe">
+                <option value="Veerapunayunipalle">
+                <option value="Vempalle">
+                <option value="Vemula">
+                <option value="Vontimitta">
+                <option value="Yerraguntla">
+            </datalist> <br>
+            <button type="button" class="button" onclick="clearBloodGroupField()">Clear Blood Group</button> 
+            <button type="button" class="button" onclick="clearFieldBox()">Clear Location</button> <br>
+            
+
+            <button type="submit" class="button">Register</button> <br><br>
+        </form>
+
+        <div>
+            <a href="login.html" class="button">Go to Login</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 BLOOD 4 YOU. Designed By<a href="https://busagani.netlify.app/"class="social-icon" aria-label="Profile">Chandu.</a> </p>
+            <div class="social-links">
+                <a href="mailto:your-email@gmail.com" class="social-icon" aria-label="Send an email">Gmail</a>
+                <a href="https://chat.whatsapp.com/EKckhyum8UF3NaEF3d6XWM" class="social-icon" aria-label="Join WhatsApp Group">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
